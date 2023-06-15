@@ -29,4 +29,11 @@ LOAD DATA LOCAL INPATH 'data.tsv' INTO TABLE t0;
 /*
     >>> Escriba su respuesta a partir de este punto <<<
 */
+INSERT OVERWRITE LOCAL DIRECTORY 'output'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 
+SELECT registros, COUNT(registros)
+FROM t0
+LATERAL VIEW
+    EXPLODE(c3) t0 AS registros, n
+GROUP BY registros;
