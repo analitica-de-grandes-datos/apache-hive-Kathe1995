@@ -40,5 +40,5 @@ FROM t0
 LATERAL VIEW
     EXPLODE(c3) t0 AS valuess, n
 LATERAL VIEW
-    EXPLODE(c2) t0 AS valuess
+    EXPLODE(c2) t0 AS value
 GROUP BY value, valuess;
