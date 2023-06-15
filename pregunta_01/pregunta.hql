@@ -29,4 +29,4 @@ CREATE TABLE registro_count AS SELECT letra, COUNT(1) AS cantidad FROM data GROU
 
 INSERT OVERWRITE LOCAL DIRECTORY './output'
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-SELECT * FROM word_counts;
+SELECT * FROM registro_count;
